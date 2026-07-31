@@ -1,4 +1,6 @@
 # ============================================================
+# flowering_design_simulations.R
+#
 # SIMULATION 1 — Two-point visit design comparison
 # True model: logit(p) = alpha + beta * x   (alpha = 0, beta = 1)
 # True Day50% occurs at x = 0 (where p = 0.5)
@@ -214,7 +216,7 @@ p_opt_late  <- plogis(t_opt_late  * scale_factor_t)  # 82.4%
 # fitted flowering model (see paper Methods for model details)
 # visits: actual field visit days (days from reference_date)
 # ------------------------------------------------------------
-sites <- c("WPN", "WSB", "LPN", "DJV")
+sites <- c("WPN", "WSB", "LPN")
 
 site_params <- list(
   WPN = list(
@@ -231,11 +233,6 @@ site_params <- list(
     alpha  = -2.0372,
     beta   = 3.2705,
     visits = c(-18, -12, -5, 1, 8, 12, 16)
-  ),
-  DJV = list(
-    alpha  = -3.3325,
-    beta   = 5.5202,
-    visits = c(-22, -5, 1, 5, 16)
   )
 )
 
@@ -508,10 +505,7 @@ for (N_bunches in n_bunches_vec2) {
 }
 
 cat("=== SIMULATION 2 COMPLETE ===\n")
-cat("Results stored in sim2_heat_grid_results[[\"10\"]], [[\"15\"]], ..., [[\"100\"]]\n")
-
-
-
+cat("Results stored in sim2_heat_grid_results[[\"10\"]], [[\"15\"]], ..., [[\"100\"]]\n\n")
 
 
 # ============================================================
